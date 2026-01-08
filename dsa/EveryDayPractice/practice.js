@@ -1,16 +1,17 @@
 
 function loader(arr) {
-let n = arr.length-1;
-if(n === 1) return 0;
-
-if(arr[0] > arr[1]) return 0;
-if(arr[n-1] >= arr[n-2]) return n-1;
- for (let i = 1; i < n; i++) {
-        if(arr[i] >= arr[i-1] && arr[i] >= arr[i+1]){
-            return i;
-        }    
- }  
+    // const store = new Array.fill(-1)
+        const store = new Array(arr.length).fill(-1);
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i+1; j < arr.length; j++) {
+         if(arr[i] < arr[j]){
+            store[i] = arr[j]
+            break;
+         }
+      }        
+    }
+    return store;
 }
 
-const arr = [1,2,3,4,6,5];
+const arr = [13, 7, 6, 12];
 console.log(loader(arr));
