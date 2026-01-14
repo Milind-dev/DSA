@@ -14,5 +14,5 @@ function loader(arr){
 }
 
 const arr = "abcced"
-
+  
 console.log(loader(arr));
