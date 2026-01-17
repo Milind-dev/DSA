@@ -1,8 +1,6 @@
 
 function loader(input) {
-    return input.split("").map(Number).reduce((max,curr) => {
-        return curr > max ? curr:max;
-    })
+    return input.split("").map(Number).reduce((max,curr) => curr > max ? curr:max)
     
 //     let arr = input.split("").map(Number);
 //     let maxelement = arr[0]
