@@ -1,10 +1,11 @@
 
-function loader(input) {
-  const arr = input;
-  const max = Math.max(...arr);
-  console.log(max) 
-  const maxlen = arr.filter(d => d === max).length
-  console.log(maxlen)
+function mul(a) {
+  return function (b) {
+    return function (c) {
+      return a * b * c;
+    };
+  };
 }
-const input = [..."1732070392"].map(Number);
-console.log(loader(input));
+
+// const mul = mul(input)
+console.log(mul(1)(2)(3));
