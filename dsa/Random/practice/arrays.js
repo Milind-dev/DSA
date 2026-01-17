@@ -1,14 +1,16 @@
 
 function loader(input) {
-    const arr = input.split("")
-    let count = 0;
-    for(let ch of arr){
-        if(ch === "i"){
-            count++;
-        }
-        // count = 1;
+    let arr = input.split("").map(Number);
+    let maxelement = arr[0]
+
+  // Frequency count
+  for (let ch of arr) {
+    if (ch > maxelement) {
+      maxelement = ch;
     }
-    return count;
+  }
+  
+  return maxelement;
 }
-const input = "milind";
+const input = "173207032";
 console.log(loader(input));
