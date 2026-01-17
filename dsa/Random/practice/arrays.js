@@ -1,17 +1,10 @@
 
 function loader(input) {
-    return input.split("").map(Number).reduce((max,curr) => curr > max ? curr:max)
-    
-//     let arr = input.split("").map(Number);
-//     let maxelement = arr[0]
-//   // Frequency count
-//   for (let ch of arr) {
-//     if (ch > maxelement) {
-//       maxelement = ch;
-//     }
-//   }
-  
-//   return maxelement;
+  const arr = input;
+  const max = Math.max(...arr);
+  console.log(max) 
+  const maxlen = arr.filter(d => d === max).length
+  console.log(maxlen)
 }
-const input = "1732070392";
+const input = [..."1732070392"].map(Number);
 console.log(loader(input));
