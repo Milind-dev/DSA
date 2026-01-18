@@ -1,17 +1,16 @@
 //moves zeros
 function loader(arr) {
-  let store = []
-  let zeros = []
-  let result = []
-  for(let ch of arr){
-    if(ch ===0){
-      zeros.push(ch);
-    }
+   let numstr = ""
+   let chstr = ""
+   for(let ch of arr){
+    if(ch === 0){
+      chstr += "" + 0;
+    }  
     else{
-      result.push(ch);
+      numstr += ch;
     }
-  }
-  return result.concat(zeros)
+   }
+   return numstr + chstr
 }
 
 
