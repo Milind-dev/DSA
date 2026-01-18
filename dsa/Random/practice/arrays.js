@@ -1,29 +1,17 @@
-function loader(arr) {
-  let left = 0;
-  let right = 1;
+//min and max here not adjacent , just min and max replace because element inside so its reset every time and min and max are store globally
 
-  let min = arr[0];
-  let max = arr[0];
+function loader(array) {
+  let min = array[0];
+  let max = array[0];
 
-  while (right < arr.length) {
-    // adjacent comparison
-    if (arr[left] > arr[right]) {
-      if (arr[right] < min) min = arr[right];
-      if (arr[left] > max) max = arr[left];
-    } else if (arr[left] < arr[right]) {
-      if (arr[left] < min) min = arr[left];
-      if (arr[right] > max) max = arr[right];
+  for (let index = 0; index < array.length; index++) {
+    const element = array[index];
+    if (element > min) {
+      min = element;
     } else {
-      // equal case
-      if (arr[left] < min) min = arr[left];
-      if (arr[left] > max) max = arr[left];
+      max = element;
     }
-
-    // move window
-    left++;
-    right++;
   }
-
   return { min, max };
 }
 
