@@ -1,19 +1,17 @@
-//min and max here not adjacent , just min and max replace because element inside so its reset every time and min and max are store globally
-
-function loader(array) {
-  let min = array[0];
-  let max = array[0];
-
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    if (element > min) {
-      min = element;
-    } else {
-      max = element;
+// Next Greater Element
+function loader(arr) {
+  let left = 0;
+  
+  while(left < arr.length){
+    let right = left + 1;
+    let found = false;
+    if(arr[right] > arr[left]){
+      store.push(arr[right]);
+      found = true
+      break;
     }
   }
-  return { min, max };
+
 }
 
-console.log(loader([1, 2, 0, 1, 3, 0]));
-// { min: 0, max: 3 }
+console.log(loader([4, 5, 2, 10]));
