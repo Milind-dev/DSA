@@ -1,41 +1,23 @@
-// // smallest pair
-// function loader(array) {
-//   let min1 = Infinity;
-//   let min2 = Infinity;
+//alternative subarryys
 
-//   for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
-//     if (min1 > element) {
-//       min2 = min1;
-//       min1 = min1;
-//     } else {
-//       min2 = array[index];
-//     }
-//   }
-//   return min1 + min2;
+function loader(arr) {
+  let left = 0;
+  let right = 1;
+  let maxlen = 1;
 
-//   // console.log(min1, min2);
-// }
-
-// console.log(loader([3, 2, 3, 4, 5, 6]));
-
-// smallest pair
-function loader(array) {
-  let min1 = Infinity;
-  let min2 = Infinity;
-
-  for (let ch of array) {
-    const element = array[ch]; 3
-    if (min1 > element) { 3 > 9
-      min2 = min1;   min2 = inf
-      min1 = ch;    min1 = 3
-    } else {
-      min2 = ch;  min2 = 9
+  while(right < arr.length){
+    if(arr[right] !== arr[right-1]){
+      maxlen = Math.max(maxlen,right - left+1);
     }
+    else{
+      //now update left when condition fully above when its equal
+      left = right; //index
+    }
+    right++;
   }
-  console.log(min1, min2);
-  return min1 + min2;
+  return maxlen;
 
 }
 
-console.log(loader([3, 2, 3, 4, 5, 6]));
+
+console.log(loader([1,0,1,0,1,1,0,0,1])); // 5
