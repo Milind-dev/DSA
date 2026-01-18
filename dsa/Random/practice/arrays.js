@@ -10,7 +10,7 @@ function loader(arr) {
       numstr += ch;
     }
    }
-   return numstr + chstr
+   return (numstr + chstr).split("").map(Number).join("")
 }
 
 
